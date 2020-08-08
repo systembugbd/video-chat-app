@@ -40,13 +40,13 @@ var peer = new Peer(undefined, {
  
 
  peer.on('open', id => {
-    newUserId = id
+    
     socket.emit('join-room', ROOM_ID, id)
  
  })
  
  const connectToNewUser = (userId, stream) =>{
-
+    newUserId = userId
     const call = peer.call(userId, streem)
     const video =document.createElement('video')
     call.on('stream', userVideoStreem =>{
