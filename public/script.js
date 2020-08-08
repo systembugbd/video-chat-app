@@ -22,7 +22,6 @@ var peer = new Peer(undefined, {
     addVideoStream(myVideoEL, stream)
 
     socket.on('user-connected', (userId) => {
-        newUserId = userId
         connectToNewUser(userId, stream)
      })
 
@@ -41,7 +40,7 @@ var peer = new Peer(undefined, {
  
 
  peer.on('open', id => {
-    
+    newUserId = id.substring(1, 8);
     socket.emit('join-room', ROOM_ID, id)
  
  })
