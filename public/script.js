@@ -22,6 +22,7 @@ var peer = new Peer(undefined, {
     addVideoStream(myVideoEL, stream)
 
     socket.on('user-connected', (userId) => {
+        newUserId = userId
         connectToNewUser(userId, stream)
      })
 
@@ -46,7 +47,7 @@ var peer = new Peer(undefined, {
  })
  
  const connectToNewUser = (userId, stream) =>{
-    newUserId = userId
+    
     const call = peer.call(userId, streem)
     const video =document.createElement('video')
     call.on('stream', userVideoStreem =>{
