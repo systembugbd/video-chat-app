@@ -13,6 +13,7 @@ var peer = new Peer(undefined, {
 
 
  let myVideoStream
+ let newUserId
  let as = navigator.mediaDevices.getUserMedia({
      video:true,
      audio:true
@@ -39,6 +40,7 @@ var peer = new Peer(undefined, {
  
 
  peer.on('open', id => {
+    newUserId = id
     socket.emit('join-room', ROOM_ID, id)
  
  })
@@ -46,6 +48,7 @@ var peer = new Peer(undefined, {
 
 
  const connectToNewUser = (userId, stream) =>{
+
     const call = peer.call(userId, streem)
     const video =document.createElement('video')
     call.on('stream', userVideoStreem =>{
@@ -76,7 +79,7 @@ $('html').keydown( (e) => {
 });
 
 socket.on('createMessage', message => {
-   $('ul.messages').append(`<li class="message"><b>User</b><br>${message}</li>`)
+   $('ul.messages').append(`<li class="message"><b>User : ${newUserId}</b><br>${message}</li>`)
    scrollToBottom()
 })
 
