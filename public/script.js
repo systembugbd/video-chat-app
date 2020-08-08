@@ -44,9 +44,7 @@ var peer = new Peer(undefined, {
     socket.emit('join-room', ROOM_ID, id)
  
  })
-
-
-
+ 
  const connectToNewUser = (userId, stream) =>{
 
     const call = peer.call(userId, streem)
@@ -92,7 +90,7 @@ const scrollToBottom = () => {
  * Mute Our Video
  */
  const muteUnmute = () => {
-    if(myVideoStream){
+   
          
         const enabled = myVideoStream.getAudioTracks()[0].enabled
         if(enabled){
@@ -102,11 +100,7 @@ const scrollToBottom = () => {
             setMuteButton()
             myVideoStream.getAudioTracks()[0].enabled = true
         }
-    }else{ 
-       
-        // setUnmuteButton() // for test 
-        alert('You have nothing to mute or unmute')
-    }
+  
  }
 
  const setMuteButton = () => {
@@ -131,8 +125,7 @@ const scrollToBottom = () => {
   */
 
   const playStop = () => {
-      if(myVideoStream){
-         
+   
       let enabled = myVideoStream.getVideoTracks()[0].enabled
       if(enabled){
             myVideoStream.getVideoTracks()[0].enabled = false
@@ -141,12 +134,7 @@ const scrollToBottom = () => {
             setStopVideo()
             myVideoStream.getVideoTracks()[0].enabled = true
       }
-    }
-    else{
-        
-        alert('You have nothing to stop video')
-    }
-
+ 
   }
 
 
