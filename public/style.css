@@ -1,0 +1,122 @@
+body{
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+#video-grid{
+    display: flex;
+    justify-content: center;
+}
+video{
+    height: 300px;
+    width: 400px;
+    object-fit: cover;
+}
+.main{
+    display: flex;
+    height: 100vh;
+    min-height: 100%;
+}
+.main__left{
+    flex: 0.8;
+    display:flex;
+    flex-direction: column;
+    background: gray;
+}
+.main__right{
+    flex: 0.2;
+    background: rgb(216, 216, 216);
+}
+
+.main__videos{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.main__controls{
+    display: flex;
+    background-color: rgb(66, 66, 66);
+    color:#e3e3e3;
+    padding:5px;
+    justify-content: space-between;
+}
+.main__controls__block{
+    display: flex;
+}
+.main__controls__button{
+    display: flex;
+    flex-direction: column;
+    padding:8px 10px;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    cursor: pointer;
+    text-align: center;
+}
+.main__controls__button i{
+    font-size:24px;
+    padding-bottom: 5px;
+  
+}
+.main__controls__button:hover{
+    background-color: #505050;
+}
+.leave_meeting{
+    color:#eB534b;
+}
+
+.main__right{
+    display:flex;
+    flex-direction: column;
+    background-color: #242228;
+    border-left: 1px solid #3d3d42;
+}
+.main__header{
+    color:#f5f5f5;
+    text-align: center;
+}
+.main__chat_window{
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+.main__chat_window::-webkit-scrollbar {
+    width: 10px; 
+             /* width of the entire scrollbar */
+}
+.main__chat_window::-webkit-scrollbar-track {
+    background: rgb(78, 78, 78); /* color of the tracking area */
+    border-radius: 50px;       
+}
+.main__chat_window::-webkit-scrollbar-thumb {
+    background-color: rgb(102, 102, 102);    /* color of the scroll thumb */
+    border-radius: 50px;       /* roundness of the scroll thumb */
+    border: 3px solid rgb(59, 59, 59);  /* creates padding around scroll thumb */
+}
+
+.main__message_container{
+    display: flex;
+    padding:20px 10px;
+}
+.main__message_container input{
+    flex-grow: 1;
+    background-color: transparent;
+    border:none;
+    color: #f5f5f5;
+    height: 50px;
+}
+
+.messages li.message{
+    color: #ffffff;
+    padding:0px;
+    list-style: none;
+}
+
+.unmute,.stop{
+    color:#eB534b;
+}
